@@ -1,7 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Nanum_Pen_Script } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+const nanum = Nanum_Pen_Script({subsets: ['latin'], weight: ["400"]})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={nanum.className}>
+        <div className="min-h-screen flex justify-center items-center bg-slate-200">
+          <div className="p-20 min-h-screen w-11/12  flex justify-between">
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
-  )
+  );
 }
